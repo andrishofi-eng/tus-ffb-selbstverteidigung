@@ -1,0 +1,312 @@
+/* --- Globale Einstellungen & Variablen --- */
+:root {
+    --primary: #d32f2f;       /* Modernes Budo-Rot */
+    --dark: #111827;          /* Tiefes Anthrazit */
+    --light: #f9fafb;         /* Off-White für Lesbarkeit */
+    --text-dark: #1f2937;
+    --text-light: #f3f4f6;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation --- */
+.navbar {
+    background-color: var(--dark);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo small {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 60vh;
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+/* --- Hinweis-Banner --- */
+.notice-bar {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #ffeeba;
+}
+
+/* --- Sektionen Allgemein --- */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light { background-color: var(--light); }
+.bg-dark { background-color: var(--dark); }
+.text-light { color: var(--text-light); }
+.text-center { text-align: center; }
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 15px auto 0 auto;
+}
+
+.section-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- Disziplinen Grid (Karten) --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+/* --- Tabelle (Trainingszeiten) --- */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: var(--dark);
+    color: white;
+}
+
+/* --- Standort-Box --- */
+.training-location-box {
+    margin-top: 40px; 
+    text-align: center; 
+    background: #f9fafb; 
+    padding: 25px; 
+    border-radius: 8px; 
+    border-left: 4px solid var(--primary);
+}
+
+.ferien-notice {
+    font-size: 0.9rem; 
+    color: #6b7280; 
+    margin-top: 15px; 
+    font-style: italic;
+}
+
+/* --- Kontakt --- */
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-link {
+    color: var(--primary); 
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #0b0f19;
+    color: #6b7280;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #1f2937;
+}
+
+.footer a {
+    color: #9ca3af;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+/* --- Responsive Darstellung (Mobiloptimierung) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+}
